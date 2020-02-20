@@ -1,6 +1,6 @@
 <template>
   <div class="viewer">
-    <b-button variant="outline-primary" class="toggle" @click="hide">Settings</b-button>
+    <b-button variant="outline-primary" class="toggle" @click="hide">{{message}}</b-button>
     <sidebar v-if="toggle" class="sidebar"> </sidebar>
     <vc-viewer>
     </vc-viewer>
@@ -14,7 +14,8 @@ export default {
   },
   data () {
     return {
-      toggle: false
+      toggle: false,
+      message: this.$store.state.czmldatasource.message
     }
   },
   methods: {

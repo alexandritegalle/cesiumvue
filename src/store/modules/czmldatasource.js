@@ -1,5 +1,5 @@
 const state = {
-  message: 'Hello from Vuex',
+  message: 'Hello',
   count: 0
 }
 const mutations = { // synchronous
