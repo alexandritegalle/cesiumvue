@@ -9,6 +9,8 @@
 </template>
 <script>
 import Sidebar from '@/components/Sidebar.vue'
+import store from '@/store'
+
 export default {
   components: {
     sidebar: Sidebar
@@ -17,7 +19,7 @@ export default {
     return {
       toggle: false,
       message: this.$store.state.czmldatasource.message,
-      czml: this.$store.state.czmldatasource.czml
+      czml: store.state.czmldatasource.czml
     }
   },
   methods: {
@@ -29,6 +31,9 @@ export default {
       }
     }
   }
+  // computed: {
+  //   czml: store.state.czmldatasource.czml
+  // }
 }
 </script>
 

@@ -17,10 +17,10 @@
                 label="Region"
                 label-for="map-region"
               >
-                <b-form-select id="map-region">
-                  <option value="any-placeholder">(any)</option>
-                  <option value="any-placeholder">Region 1</option>
-                  <option value="any-placeholder">Region 2</option>
+                <b-form-select id="map-region" v-model="changeDataSource">
+                  <option value=nodata>No data</option>
+                  <option value=melbourne>Melbourne</option>
+                  <option value=sydney>Sydney</option>
                 </b-form-select>
               </b-form-group>
             </b-card>
@@ -33,6 +33,22 @@
     </b-row>
   </b-container>
 </template>
+
+<script>
+export default {
+  computed: {
+    changeDataSource: {
+      get () {
+        return null
+      },
+      set ([value]) {
+        console.log(value)
+        this.$store.dispatch('changeCzmlDataSource', [value])
+      }
+    }
+  }
+}
+</script>
 
 <style>
 #nav {

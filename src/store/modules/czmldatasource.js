@@ -4,9 +4,9 @@ import sydney from '@/data/bird-sydney'
 import nodata from '@/data/no-data'
 
 const state = {
-  message: 'Hello',
+  message: 'Settings',
   count: 0,
-  czml: nodata,
+  czml: melbourne,
   datasources: [...nodata, ...melbourne, ...sydney]
 }
 const mutations = { // synchronous
@@ -14,7 +14,7 @@ const mutations = { // synchronous
     state.count += payload
   },
   [CHANGE_CZML_DATA_SOURCE] (state, payload) {
-    state.czml = payload
+    state.czml = sydney
   }
 }
 const actions = { // asynchronous
