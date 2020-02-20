@@ -3,6 +3,7 @@
     <b-button variant="outline-primary" class="toggle" @click="hide">{{message}}</b-button>
     <sidebar v-if="toggle" class="sidebar"> </sidebar>
     <vc-viewer>
+      <vc-datasource-czml :czml="czml"></vc-datasource-czml>
     </vc-viewer>
   </div>
 </template>
@@ -15,7 +16,8 @@ export default {
   data () {
     return {
       toggle: false,
-      message: this.$store.state.czmldatasource.message
+      message: this.$store.state.czmldatasource.message,
+      czml: this.$store.state.czmldatasource.czml
     }
   },
   methods: {
